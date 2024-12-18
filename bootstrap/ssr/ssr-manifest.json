@@ -1,0 +1,60 @@
+{
+  "\u0000plugin-vue:export-helper": [
+    "/build/assets/MainLayout-zIEbSbGH.js"
+  ],
+  "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
+  "resources/js/Components/Aside.vue": [
+    "/build/assets/MainLayout-zIEbSbGH.js"
+  ],
+  "resources/js/Components/Icons/Logo.vue": [
+    "/build/assets/MainLayout-zIEbSbGH.js"
+  ],
+  "resources/js/Components/ProductCard.vue": [
+    "/build/assets/ProductCardGame-QWbuLZK0.js"
+  ],
+  "resources/js/Components/ProductCardGame.vue": [
+    "/build/assets/ProductCardGame-QWbuLZK0.js"
+  ],
+  "resources/js/Layouts/MainLayout.vue": [
+    "/build/assets/MainLayout-zIEbSbGH.js"
+  ],
+  "resources/js/Pages/contacts.vue": [
+    "/build/assets/contacts-Bu-jmQ08.js"
+  ],
+  "resources/js/Pages/faq.vue": [
+    "/build/assets/faq-GYM27-KY.js",
+    "/build/assets/faq-tsQG5tfm.css"
+  ],
+  "resources/js/Pages/faq.vue?vue&type=style&index=0&scoped=d941a6fd&lang.css": [
+    "/build/assets/faq-GYM27-KY.js",
+    "/build/assets/faq-tsQG5tfm.css"
+  ],
+  "resources/js/Pages/information.vue": [
+    "/build/assets/information-B8NIKiyk.js"
+  ],
+  "resources/js/Pages/main.vue": [
+    "/build/assets/main-Cm7TwMmn.js"
+  ],
+  "resources/js/Pages/privacy.vue": [
+    "/build/assets/privacy-DCfu2Rx7.js"
+  ],
+  "resources/js/Pages/product.vue": [
+    "/build/assets/product-BgPX2zlK.js",
+    "/build/assets/product-BmdzQQkY.css"
+  ],
+  "resources/js/Pages/product.vue?vue&type=style&index=0&scoped=46a9a9de&lang.css": [
+    "/build/assets/product-BgPX2zlK.js",
+    "/build/assets/product-BmdzQQkY.css"
+  ],
+  "resources/js/Pages/products.vue": [
+    "/build/assets/products-y0qYfRgq.js"
+  ],
+  "resources/js/Pages/updates.vue": [
+    "/build/assets/updates-CbOyoJG6.js"
+  ],
+  "resources/js/Store/DownloadModalStore.js": [
+    "/build/assets/MainLayout-zIEbSbGH.js"
+  ],
+  "resources/js/ssr.js": [],
+  "vendor/tightenco/ziggy/dist/index.js": []
+}

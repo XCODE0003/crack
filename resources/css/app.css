@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+body {
+    background-color: #1b1c1e;
+    font-family: "Geist", sans-serif;
+    color: #fff;
+}
+
+@font-face {
+    font-family: "Consolas";
+    src: url("/assets/fonts/consolas.ttf") format("truetype");
+}
+
+.consolas {
+    font-family: "Consolas", monospace;
+}
+
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+main {
+    @apply py-12;
+}
+
+aside {
+    @apply pr-8 py-6 border-r border-gray_dark;
+}
+
+.aside-nav {
+    @apply text-gray font-medium;
+}
+
+a {
+    @apply hover:text-blue transition-all duration-300;
+}
+
+.specification span {
+    @apply leading-[160%];
+}
+
+.specification {
+    @apply flex items-center gap-2 text-sm font-medium;
+}
+
+.btn-primary {
+    background-color: #37393d;
+}
+
+.btn {
+    @apply flex items-center gap-2 py-4 px-5 rounded-xl font-medium hover:opacity-50 transition-all duration-300 leading-none;
+}
+
+.faq-question {
+    @apply flex items-center justify-between;
+}
+
+.download-btn {
+    @apply transition-all duration-300 hover:translate-y-[2px] cursor-pointer;
+    display: flex;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #3af 0%, #006aff 100%);
+    box-shadow: 0px 47px 13px 0px rgba(0, 110, 255, 0),
+        0px 30px 12px 0px rgba(0, 110, 255, 0.01),
+        0px 17px 10px 0px rgba(0, 110, 255, 0.05),
+        0px 7px 7px 0px rgba(0, 110, 255, 0.09),
+        0px 2px 4px 0px rgba(0, 110, 255, 0.1);
+}
