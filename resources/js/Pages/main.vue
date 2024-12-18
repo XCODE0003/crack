@@ -4,6 +4,7 @@ import { Link } from "@inertiajs/vue3";
 import ProductCard from "../Components/ProductCard.vue";
 import ProductCardGame from "../Components/ProductCardGame.vue";
 import Slider from "../Components/Slider.vue";
+import { Head } from "@inertiajs/vue3";
 const props = defineProps({
     categories: Array,
     sliders: Array,
@@ -12,6 +13,20 @@ const props = defineProps({
 
 <template>
     <MainLayout>
+        <Head>
+            <meta
+                name="title"
+                content="Free Software for Windows - Download Free Tools and Utilities"
+            />
+            <meta
+                name="description"
+                content="Discover the best free software for Windows. Download utilities, antivirus programs, media players, and more without registration. Your source for reliable and secure free tools."
+            />
+            <meta
+                name="keywords"
+                content="free software for Windows, free Windows tools, free antivirus download, best free media player, free utilities for Windows"
+            />
+        </Head>
         <main class="flex flex-col gap-6">
             <div class="w-full max-w-full overflow-hidden">
                 <Slider :sliders="sliders" class="w-full max-w-full" />

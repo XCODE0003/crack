@@ -27,7 +27,7 @@ Route::get('/', function () {
     $sliders = Slider::all();
     return Inertia::render('main', [
         'categories' => $categories,
-        'title' => 'Главная',
+        'title' => 'Free Software for Windows - Download Free Tools and Utilities',
         'sliders' => $sliders
     ]);
 });
@@ -68,13 +68,19 @@ Route::get('/updates', function () {
 });
 Route::get('/privacy', function () {
 
-    return Inertia::render('privacy');
+    return Inertia::render('privacy', [
+        'title' => 'Privacy Policy - Your Data is Safe with Us'
+    ]);
 });
 Route::get('/contacts', function () {
-    return Inertia::render('contacts');
+    return Inertia::render('contacts', [
+        'title' => 'Contact Us - Get in Touch with Our Team'
+    ]);
 });
 Route::get('/information', function () {
-    return Inertia::render('information');
+    return Inertia::render('information', [
+        'title' => 'Information - Learn About Our Software and Services'
+    ]);
 });
 Route::get('/faq', function () {
 
