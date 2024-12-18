@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Models\Updates;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +24,11 @@ Route::get('/', function () {
     $categories = Category::with(['products' => function ($query) {
         $query->limit(4);
     }])->get();
-
+    $sliders = Slider::all();
     return Inertia::render('main', [
         'categories' => $categories,
-        'title' => 'Главная'
+        'title' => 'Главная',
+        'sliders' => $sliders
     ]);
 });
 
@@ -34,7 +37,6 @@ Route::get('/category/{id}', function ($id, Request $request) {
     $currentPage = $request->get('page', 1);
     $perPage = 8;
 
-    // Получаем все товары до текущей страницы
     $allProducts = collect();
     for ($i = 1; $i <= $currentPage; $i++) {
         $products = $category->products()
@@ -42,7 +44,6 @@ Route::get('/category/{id}', function ($id, Request $request) {
         $allProducts = $allProducts->concat($products->items());
     }
 
-    // Создаем новый пагинатор с накопленными данными
     $products = new \Illuminate\Pagination\LengthAwarePaginator(
         $allProducts,
         $products->total(),
@@ -53,12 +54,17 @@ Route::get('/category/{id}', function ($id, Request $request) {
 
     return Inertia::render('products', [
         'category' => $category,
-        'products' => $products
+        'products' => $products,
+        'title' => $category->full_name
     ]);
 });
 
 Route::get('/updates', function () {
-    return Inertia::render('updates');
+    $updates = Updates::all();
+    return Inertia::render('updates', [
+        'title' => 'Software Updates and Bug Fixes - Latest Patches and News',
+        'updates' => $updates
+    ]);
 });
 Route::get('/privacy', function () {
 
@@ -71,7 +77,10 @@ Route::get('/information', function () {
     return Inertia::render('information');
 });
 Route::get('/faq', function () {
-    return Inertia::render('faq');
+
+    return Inertia::render('faq', [
+        'title' => 'How to Install Software - FAQ for Safe Download'
+    ]);
 });
 Route::get('/product/{id}', function ($id) {
     $product = Product::find($id);
@@ -80,6 +89,7 @@ Route::get('/product/{id}', function ($id) {
     return Inertia::render('product', [
         'product' => $product,
         'category' => $category,
-        'products' => $products
+        'products' => $products,
+        'title' => $product->title
     ]);
 });

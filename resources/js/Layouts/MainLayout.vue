@@ -84,7 +84,7 @@ const downloadModalStore = useDownloadModalStore();
                 <a
                     :href="downloadModalStore.product.download_file"
                     target="_blank"
-                    class="btn btn-primary flex justify-center"
+                    class="btn btn-primary hover:text-white flex justify-center"
                 >
                     <svg
                         width="20"
@@ -109,7 +109,7 @@ const downloadModalStore = useDownloadModalStore();
                 <a
                     :href="downloadModalStore.product.download_link"
                     target="_blank"
-                    class="btn btn-primary flex justify-center"
+                    class="btn btn-primary hover:text-white flex justify-center"
                 >
                     <svg
                         width="20"

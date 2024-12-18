@@ -3,6 +3,11 @@ import MainLayout from "../Layouts/MainLayout.vue";
 import { Link } from "@inertiajs/vue3";
 import ProductCard from "../Components/ProductCard.vue";
 import ProductCardGame from "../Components/ProductCardGame.vue";
+import { defineProps } from "vue";
+
+const props = defineProps({
+    updates: Array,
+});
 </script>
 
 <template>
@@ -15,34 +20,13 @@ import ProductCardGame from "../Components/ProductCardGame.vue";
             </div>
             <div class="max-w-[640px] flex flex-col gap-2">
                 <div
+                    v-for="update in updates"
                     class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
                 >
-                    <span> Add window resize and fix bugs </span>
-                    <span class="text-sm text-gray">07.10.2024 </span>
-                </div>
-                <div
-                    class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
-                >
-                    <span> Add window resize and fix bugs </span>
-                    <span class="text-sm text-gray">07.10.2024 </span>
-                </div>
-                <div
-                    class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
-                >
-                    <span> Add window resize and fix bugs </span>
-                    <span class="text-sm text-gray">07.10.2024 </span>
-                </div>
-                <div
-                    class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
-                >
-                    <span> Add window resize and fix bugs </span>
-                    <span class="text-sm text-gray">07.10.2024 </span>
-                </div>
-                <div
-                    class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
-                >
-                    <span> Add window resize and fix bugs </span>
-                    <span class="text-sm text-gray">07.10.2024 </span>
+                    <span> {{ update.title }} </span>
+                    <span class="text-sm text-gray">
+                        {{ update.date_created }}
+                    </span>
                 </div>
             </div>
         </main>

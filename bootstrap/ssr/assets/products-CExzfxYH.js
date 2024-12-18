@@ -1,8 +1,9 @@
-import { ref, onMounted, withCtx, createVNode, toDisplayString, openBlock, createBlock, Fragment, renderList, createTextVNode, createCommentVNode, useSSRContext } from "vue";
-import { ssrRenderComponent, ssrInterpolate, ssrRenderList, ssrIncludeBooleanAttr } from "vue/server-renderer";
-import { _ as _sfc_main$1 } from "./MainLayout-zIEbSbGH.js";
-import { useForm } from "@inertiajs/vue3";
+import { ref, onMounted, computed, unref, withCtx, openBlock, createBlock, toDisplayString, createCommentVNode, mergeProps, Fragment, renderList, createVNode, createTextVNode, useSSRContext } from "vue";
+import { ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderList, ssrRenderAttrs, ssrIncludeBooleanAttr } from "vue/server-renderer";
+import { _ as _sfc_main$1 } from "./MainLayout-CEhTnx9A.js";
+import { useForm, Head } from "@inertiajs/vue3";
 import { _ as _sfc_main$2, a as _sfc_main$3 } from "./ProductCardGame-QWbuLZK0.js";
+import { p as parseSeoTags } from "./index-BVfPHjrP.js";
 import "vue-final-modal";
 import "pinia";
 const _sfc_main = {
@@ -35,10 +36,71 @@ const _sfc_main = {
         }
       });
     }
+    const seoTags = computed(() => {
+      var _a, _b;
+      if ((_a = props == null ? void 0 : props.category) == null ? void 0 : _a.seo_code) {
+        return parseSeoTags((_b = props.category) == null ? void 0 : _b.seo_code);
+      }
+      return {};
+    });
     return (_ctx, _push, _parent, _attrs) => {
-      _push(ssrRenderComponent(_sfc_main$1, _attrs, {
+      _push(`<!--[-->`);
+      _push(ssrRenderComponent(unref(Head), null, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
+            if (seoTags.value.title) {
+              _push2(`<title${_scopeId}>${ssrInterpolate(seoTags.value.title)}</title>`);
+            } else {
+              _push2(`<!---->`);
+            }
+            if (seoTags.value.description) {
+              _push2(`<meta name="description"${ssrRenderAttr("content", seoTags.value.description)}${_scopeId}>`);
+            } else {
+              _push2(`<!---->`);
+            }
+          } else {
+            return [
+              seoTags.value.title ? (openBlock(), createBlock("title", { key: 0 }, toDisplayString(seoTags.value.title), 1)) : createCommentVNode("", true),
+              seoTags.value.description ? (openBlock(), createBlock("meta", {
+                key: 1,
+                name: "description",
+                content: seoTags.value.description
+              }, null, 8, ["content"])) : createCommentVNode("", true)
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(ssrRenderComponent(_sfc_main$1, null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(ssrRenderComponent(unref(Head), null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  if (seoTags.value.title) {
+                    _push3(`<title${_scopeId2}>${ssrInterpolate(seoTags.value.title)}</title>`);
+                  } else {
+                    _push3(`<!---->`);
+                  }
+                  _push3(`<!--[-->`);
+                  ssrRenderList(seoTags.value.meta, (meta, index) => {
+                    _push3(`<meta${ssrRenderAttrs(mergeProps({ ref_for: true }, meta))}${_scopeId2}>`);
+                  });
+                  _push3(`<!--]-->`);
+                } else {
+                  return [
+                    seoTags.value.title ? (openBlock(), createBlock("title", { key: 0 }, toDisplayString(seoTags.value.title), 1)) : createCommentVNode("", true),
+                    (openBlock(true), createBlock(Fragment, null, renderList(seoTags.value.meta, (meta, index) => {
+                      return openBlock(), createBlock("meta", mergeProps({
+                        key: index,
+                        ref_for: true
+                      }, meta), null, 16);
+                    }), 128))
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
             _push2(`<main class="flex flex-col gap-6"${_scopeId}><div class="flex flex-col gap-5"${_scopeId}><div class="flex justify-between items-center"${_scopeId}><h1 class="text-4xl font-semibold"${_scopeId}>${ssrInterpolate(props.category.name)}</h1></div><div class="grid grid-cols-4 gap-5"${_scopeId}><!--[-->`);
             ssrRenderList(productsList.value, (product) => {
               _push2(`<div${_scopeId}>`);
@@ -70,6 +132,18 @@ const _sfc_main = {
             _push2(`</div></div></main>`);
           } else {
             return [
+              createVNode(unref(Head), null, {
+                default: withCtx(() => [
+                  seoTags.value.title ? (openBlock(), createBlock("title", { key: 0 }, toDisplayString(seoTags.value.title), 1)) : createCommentVNode("", true),
+                  (openBlock(true), createBlock(Fragment, null, renderList(seoTags.value.meta, (meta, index) => {
+                    return openBlock(), createBlock("meta", mergeProps({
+                      key: index,
+                      ref_for: true
+                    }, meta), null, 16);
+                  }), 128))
+                ]),
+                _: 1
+              }),
               createVNode("main", { class: "flex flex-col gap-6" }, [
                 createVNode("div", { class: "flex flex-col gap-5" }, [
                   createVNode("div", { class: "flex justify-between items-center" }, [
@@ -127,6 +201,7 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
+      _push(`<!--]-->`);
     };
   }
 };

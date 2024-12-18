@@ -8,7 +8,14 @@ body {
     font-family: "Geist", sans-serif;
     color: #fff;
 }
-
+.link_nav:hover {
+    @apply text-white;
+}
+.link_nav:hover img,
+.link_nav:hover svg {
+    filter: brightness(0) invert(1);
+    @apply transition-all duration-300;
+}
 @font-face {
     font-family: "Consolas";
     src: url("/assets/fonts/consolas.ttf") format("truetype");

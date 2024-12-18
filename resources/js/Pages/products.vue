@@ -4,7 +4,9 @@ import { Link } from "@inertiajs/vue3";
 import ProductCard from "../Components/ProductCard.vue";
 import ProductCardGame from "../Components/ProductCardGame.vue";
 import { useForm } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { parseSeoTags } from "../utils";
+import { Head } from "@inertiajs/vue3";
 
 const props = defineProps({
     category: Object,
@@ -34,10 +36,31 @@ function loadMore() {
         },
     });
 }
+
+const seoTags = computed(() => {
+    if (props?.category?.seo_code) {
+        return parseSeoTags(props.category?.seo_code);
+    }
+    return {};
+});
 </script>
 
 <template>
+    <Head>
+        <title v-if="seoTags.title">{{ seoTags.title }}</title>
+        <meta
+            name="description"
+            v-if="seoTags.description"
+            :content="seoTags.description"
+        />
+    </Head>
     <MainLayout>
+        <Head>
+            <title v-if="seoTags.title">{{ seoTags.title }}</title>
+            <template v-for="(meta, index) in seoTags.meta" :key="index">
+                <meta v-bind="meta" />
+            </template>
+        </Head>
         <main class="flex flex-col gap-6">
             <div class="flex flex-col gap-5">
                 <div class="flex justify-between items-center">

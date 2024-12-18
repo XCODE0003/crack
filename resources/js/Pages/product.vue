@@ -1,10 +1,10 @@
 <script setup>
 import MainLayout from "../Layouts/MainLayout.vue";
 import { Link } from "@inertiajs/vue3";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { Head } from "@inertiajs/vue3";
 import { useDownloadModalStore } from "../Store/DownloadModalStore";
-
+import { parseSeoTags } from "../utils";
 const downloadModalStore = useDownloadModalStore();
 const props = defineProps({
     product: Object,
@@ -12,28 +12,18 @@ const props = defineProps({
     products: Array,
 });
 
-function createSeoTags(seoCode) {
-    const div = document.createElement("div");
-    div.innerHTML = seoCode;
+const isClient = ref(false);
 
-    return {
-        title: div.querySelector("title")?.innerText || props.product.title,
-        meta: Array.from(div.querySelectorAll("meta")).map((meta) => ({
-            name: meta.getAttribute("name"),
-            content: meta.getAttribute("content"),
-            property: meta.getAttribute("property"),
-            "http-equiv": meta.getAttribute("http-equiv"),
-        })),
-    };
-}
+onMounted(() => {
+    isClient.value = true;
+});
 
-const seoTags = computed(() => createSeoTags(props.product.seo_code));
+const seoTags = computed(() => parseSeoTags(props.product.seo_code));
 </script>
 
 <template>
     <MainLayout>
         <Head>
-            <title v-if="seoTags.title">{{ seoTags.title }}</title>
             <template v-for="(meta, index) in seoTags.meta" :key="index">
                 <meta v-bind="meta" />
             </template>

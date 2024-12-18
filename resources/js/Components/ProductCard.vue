@@ -1,4 +1,5 @@
 <script setup>
+import { Link } from "@inertiajs/vue3";
 const props = defineProps({
     product: Object,
     category: Object,
@@ -6,7 +7,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <div
+    <Link
+        :href="'/product/' + product.id"
         class="flex flex-col gap-5 rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark p-6"
     >
         <div class="flex justify-center items-center">
@@ -29,5 +31,5 @@ const props = defineProps({
                 {{ category.full_name }}
             </p>
         </div>
-    </div>
+    </Link>
 </template>

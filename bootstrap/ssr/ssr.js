@@ -2,18 +2,8 @@ import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
 import { createSSRApp, h as h$1 } from "vue";
-import { createVfm } from "vue-final-modal";
 import { createPinia } from "pinia";
-async function resolvePageComponent(path, pages) {
-  for (const p2 of Array.isArray(path) ? path : [path]) {
-    const page = pages[p2];
-    if (typeof page === "undefined") {
-      continue;
-    }
-    return typeof page === "function" ? page() : page;
-  }
-  throw new Error(`Page not found: ${path}`);
-}
+import { createVfm } from "vue-final-modal";
 function t() {
   return t = Object.assign ? Object.assign.bind() : function(t4) {
     for (var e2 = 1; e2 < arguments.length; e2++) {
@@ -345,16 +335,29 @@ const k = { install(t4, e2) {
   const r2 = (t5, r3, n2, o2 = e2) => T(t5, r3, n2, o2);
   parseInt(t4.version) > 2 ? (t4.config.globalProperties.route = r2, t4.provide("route", r2)) : t4.mixin({ methods: { route: r2 } });
 } };
+async function resolvePageComponent(path, pages) {
+  for (const p2 of Array.isArray(path) ? path : [path]) {
+    const page = pages[p2];
+    if (typeof page === "undefined") {
+      continue;
+    }
+    return typeof page === "function" ? page() : page;
+  }
+  throw new Error(`Page not found: ${path}`);
+}
 const vfm = createVfm();
 createServer(
   (page) => createInertiaApp({
     page,
     render: renderToString,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/contacts.vue": () => import("./assets/contacts-Bu-jmQ08.js"), "./Pages/faq.vue": () => import("./assets/faq-GYM27-KY.js"), "./Pages/information.vue": () => import("./assets/information-B8NIKiyk.js"), "./Pages/main.vue": () => import("./assets/main-Cm7TwMmn.js"), "./Pages/privacy.vue": () => import("./assets/privacy-DCfu2Rx7.js"), "./Pages/product.vue": () => import("./assets/product-BgPX2zlK.js"), "./Pages/products.vue": () => import("./assets/products-y0qYfRgq.js"), "./Pages/updates.vue": () => import("./assets/updates-CbOyoJG6.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/contacts.vue": () => import("./assets/contacts-B8SahiLM.js"), "./Pages/faq.vue": () => import("./assets/faq-DiRvkO_H.js"), "./Pages/information.vue": () => import("./assets/information-C3dch0cv.js"), "./Pages/main.vue": () => import("./assets/main-CfNTWL7k.js"), "./Pages/privacy.vue": () => import("./assets/privacy-DT8qIuNM.js"), "./Pages/product.vue": () => import("./assets/product-CpvV9170.js"), "./Pages/products.vue": () => import("./assets/products-CExzfxYH.js"), "./Pages/updates.vue": () => import("./assets/updates-CFTG1IxS.js") })),
     setup({ App, props, plugin }) {
       return createSSRApp({
         render: () => h$1(App, props)
       }).use(plugin).use(vfm).use(createPinia()).use(k);
+    },
+    progress: {
+      color: "#4B5563"
     }
   })
 );

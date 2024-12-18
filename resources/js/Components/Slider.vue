@@ -1,0 +1,42 @@
+<script setup>
+import "swiper/css";
+
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css/pagination";
+const modules = [Pagination, Autoplay];
+
+const props = defineProps({
+    sliders: Array,
+});
+</script>
+<template>
+    <div>
+        <swiper
+            :pagination="true"
+            :slides-per-view="1"
+            :space-between="10"
+            :autoplay="{
+                delay: 2500,
+                disableOnInteraction: false,
+            }"
+            :modules="modules"
+            class="h-[400px] max-w-[1000px]"
+        >
+            <swiper-slide v-for="slider in sliders" :key="slider.id">
+                <img
+                    class="object-cover"
+                    :src="`/storage/${slider.image}`"
+                    :alt="slider.alt_image"
+                />
+            </swiper-slide>
+        </swiper>
+    </div>
+</template>
+<style>
+:root {
+    --swiper-theme-color: #fff;
+}
+</style>

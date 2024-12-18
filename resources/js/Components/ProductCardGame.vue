@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
     <Link
         :href="'/product/' + product.id"
-        class="flex flex-col gap-5 rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark"
+        class="flex flex-col gap-5 h-full rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark"
     >
         <div class="flex justify-center items-center">
             <img

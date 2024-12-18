@@ -1,6 +1,6 @@
 import { withCtx, createVNode, createTextVNode, useSSRContext } from "vue";
 import { ssrRenderComponent } from "vue/server-renderer";
-import { _ as _sfc_main$1 } from "./MainLayout-zIEbSbGH.js";
+import { _ as _sfc_main$1 } from "./MainLayout-CEhTnx9A.js";
 import "@inertiajs/vue3";
 import "./ProductCardGame-QWbuLZK0.js";
 import "vue-final-modal";

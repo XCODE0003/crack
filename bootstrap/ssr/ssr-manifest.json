@@ -1,13 +1,23 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/build/assets/MainLayout-zIEbSbGH.js"
+    "/build/assets/MainLayout-CEhTnx9A.js"
   ],
   "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
+  "node_modules/swiper/modules/pagination.css": [
+    "/build/assets/main-CfNTWL7k.js",
+    "/build/assets/main-BJlk4Eju.css"
+  ],
+  "node_modules/swiper/swiper.css": [
+    "/build/assets/main-CfNTWL7k.js",
+    "/build/assets/main-BJlk4Eju.css"
+  ],
+  "node_modules/vue-final-modal/dist/style.css": [],
+  "resources/css/app.css": [],
   "resources/js/Components/Aside.vue": [
-    "/build/assets/MainLayout-zIEbSbGH.js"
+    "/build/assets/MainLayout-CEhTnx9A.js"
   ],
   "resources/js/Components/Icons/Logo.vue": [
-    "/build/assets/MainLayout-zIEbSbGH.js"
+    "/build/assets/MainLayout-CEhTnx9A.js"
   ],
   "resources/js/Components/ProductCard.vue": [
     "/build/assets/ProductCardGame-QWbuLZK0.js"
@@ -15,46 +25,58 @@
   "resources/js/Components/ProductCardGame.vue": [
     "/build/assets/ProductCardGame-QWbuLZK0.js"
   ],
+  "resources/js/Components/Slider.vue": [
+    "/build/assets/main-CfNTWL7k.js",
+    "/build/assets/main-BJlk4Eju.css"
+  ],
+  "resources/js/Components/Slider.vue?vue&type=style&index=0&lang.css": [
+    "/build/assets/main-CfNTWL7k.js",
+    "/build/assets/main-BJlk4Eju.css"
+  ],
   "resources/js/Layouts/MainLayout.vue": [
-    "/build/assets/MainLayout-zIEbSbGH.js"
+    "/build/assets/MainLayout-CEhTnx9A.js"
   ],
   "resources/js/Pages/contacts.vue": [
-    "/build/assets/contacts-Bu-jmQ08.js"
+    "/build/assets/contacts-B8SahiLM.js"
   ],
   "resources/js/Pages/faq.vue": [
-    "/build/assets/faq-GYM27-KY.js",
-    "/build/assets/faq-tsQG5tfm.css"
+    "/build/assets/faq-DiRvkO_H.js",
+    "/build/assets/faq-De4XB0q8.css"
   ],
-  "resources/js/Pages/faq.vue?vue&type=style&index=0&scoped=d941a6fd&lang.css": [
-    "/build/assets/faq-GYM27-KY.js",
-    "/build/assets/faq-tsQG5tfm.css"
+  "resources/js/Pages/faq.vue?vue&type=style&index=0&scoped=293ee74c&lang.css": [
+    "/build/assets/faq-DiRvkO_H.js",
+    "/build/assets/faq-De4XB0q8.css"
   ],
   "resources/js/Pages/information.vue": [
-    "/build/assets/information-B8NIKiyk.js"
+    "/build/assets/information-C3dch0cv.js"
   ],
   "resources/js/Pages/main.vue": [
-    "/build/assets/main-Cm7TwMmn.js"
+    "/build/assets/main-CfNTWL7k.js",
+    "/build/assets/main-BJlk4Eju.css"
   ],
   "resources/js/Pages/privacy.vue": [
-    "/build/assets/privacy-DCfu2Rx7.js"
+    "/build/assets/privacy-DT8qIuNM.js"
   ],
   "resources/js/Pages/product.vue": [
-    "/build/assets/product-BgPX2zlK.js",
-    "/build/assets/product-BmdzQQkY.css"
+    "/build/assets/product-CpvV9170.js",
+    "/build/assets/product-BccOQ-z3.css"
   ],
-  "resources/js/Pages/product.vue?vue&type=style&index=0&scoped=46a9a9de&lang.css": [
-    "/build/assets/product-BgPX2zlK.js",
-    "/build/assets/product-BmdzQQkY.css"
+  "resources/js/Pages/product.vue?vue&type=style&index=0&scoped=5f04a73b&lang.css": [
+    "/build/assets/product-CpvV9170.js",
+    "/build/assets/product-BccOQ-z3.css"
   ],
   "resources/js/Pages/products.vue": [
-    "/build/assets/products-y0qYfRgq.js"
+    "/build/assets/products-CExzfxYH.js"
   ],
   "resources/js/Pages/updates.vue": [
-    "/build/assets/updates-CbOyoJG6.js"
+    "/build/assets/updates-CFTG1IxS.js"
   ],
   "resources/js/Store/DownloadModalStore.js": [
-    "/build/assets/MainLayout-zIEbSbGH.js"
+    "/build/assets/MainLayout-CEhTnx9A.js"
   ],
   "resources/js/ssr.js": [],
+  "resources/js/utils/index.js": [
+    "/build/assets/index-BVfPHjrP.js"
+  ],
   "vendor/tightenco/ziggy/dist/index.js": []
 }

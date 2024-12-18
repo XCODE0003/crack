@@ -3,15 +3,19 @@ import MainLayout from "../Layouts/MainLayout.vue";
 import { Link } from "@inertiajs/vue3";
 import ProductCard from "../Components/ProductCard.vue";
 import ProductCardGame from "../Components/ProductCardGame.vue";
-
+import Slider from "../Components/Slider.vue";
 const props = defineProps({
     categories: Array,
+    sliders: Array,
 });
 </script>
 
 <template>
     <MainLayout>
         <main class="flex flex-col gap-6">
+            <div class="w-full max-w-full overflow-hidden">
+                <Slider :sliders="sliders" class="w-full max-w-full" />
+            </div>
             <div v-for="category in categories" class="flex flex-col gap-5">
                 <div class="flex justify-between items-center">
                     <h1 class="text-2xl font-bold">{{ category.name }}</h1>
