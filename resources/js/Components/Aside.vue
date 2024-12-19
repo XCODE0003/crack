@@ -16,7 +16,7 @@ const props = defineProps({
             <div class="flex flex-col aside-nav gap-4">
                 <Link
                     v-for="category in props.categories"
-                    :href="`/category/${category.id}`"
+                    :href="`/category/${category.name.toLowerCase()}`"
                     class="flex link_nav items-center gap-3 hover:text-white stroke-gray hover:fill-white hover:stroke-white"
                 >
                     <div

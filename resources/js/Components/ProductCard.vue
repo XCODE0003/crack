@@ -1,14 +1,22 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import { defineProps } from "vue";
 const props = defineProps({
     product: Object,
     category: Object,
 });
+console.log(props.category);
+console.log(props.product);
 </script>
 
 <template>
     <Link
-        :href="'/product/' + product.id"
+        :href="
+            '/product/' +
+            category?.name.toLowerCase() +
+            '/' +
+            product?.title.toLowerCase()
+        "
         class="flex flex-col gap-5 rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark p-6"
     >
         <div class="flex justify-center items-center">

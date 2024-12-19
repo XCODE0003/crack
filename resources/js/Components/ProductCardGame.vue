@@ -8,7 +8,12 @@ const props = defineProps({
 
 <template>
     <Link
-        :href="'/product/' + product.id"
+        :href="
+            '/product/' +
+            category?.name.toLowerCase() +
+            '/' +
+            product?.title.toLowerCase()
+        "
         class="flex flex-col gap-5 h-full rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark"
     >
         <div class="flex justify-center items-center">

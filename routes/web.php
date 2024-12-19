@@ -32,8 +32,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/category/{id}', function ($id, Request $request) {
-    $category = Category::find($id);
+Route::get('/category/{name}', function ($name, Request $request) {
+    $category = Category::where('name', $name)->first();
     $currentPage = $request->get('page', 1);
     $perPage = 8;
 
@@ -88,9 +88,9 @@ Route::get('/faq', function () {
         'title' => 'How to Install Software - FAQ for Safe Download'
     ]);
 });
-Route::get('/product/{id}', function ($id) {
-    $product = Product::find($id);
-    $category = $product->category;
+Route::get('/product/{category}/{name}', function ($category, $name) {
+    $category = Category::where('name', $category)->first();
+    $product = Product::where('title', $name)->first();
     $products = Product::query()->limit(5)->inRandomOrder()->get();
     return Inertia::render('product', [
         'product' => $product,
