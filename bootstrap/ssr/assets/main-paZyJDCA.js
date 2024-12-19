@@ -1,8 +1,8 @@
 import { unref, withCtx, createVNode, openBlock, createBlock, Fragment, renderList, useSSRContext, createTextVNode, toDisplayString } from "vue";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrRenderAttr, ssrInterpolate } from "vue/server-renderer";
-import { _ as _sfc_main$2 } from "./MainLayout-CEhTnx9A.js";
-import { Link } from "@inertiajs/vue3";
-import { _ as _sfc_main$3, a as _sfc_main$4 } from "./ProductCardGame-QWbuLZK0.js";
+import { _ as _sfc_main$2 } from "./MainLayout-rxxRvUJY.js";
+import { Head, Link } from "@inertiajs/vue3";
+import { _ as _sfc_main$3, a as _sfc_main$4 } from "./ProductCardGame-_lk9caIX.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Autoplay } from "swiper/modules";
 import "vue-final-modal";
@@ -95,6 +95,29 @@ const _sfc_main = {
       _push(ssrRenderComponent(_sfc_main$2, _attrs, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
+            _push2(ssrRenderComponent(unref(Head), null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(`<meta name="title" content="Free Software for Windows - Download Free Tools and Utilities"${_scopeId2}><meta name="description" content="Discover the best free software for Windows. Download utilities, antivirus programs, media players, and more without registration. Your source for reliable and secure free tools."${_scopeId2}><meta name="keywords" content="free software for Windows, free Windows tools, free antivirus download, best free media player, free utilities for Windows"${_scopeId2}>`);
+                } else {
+                  return [
+                    createVNode("meta", {
+                      name: "title",
+                      content: "Free Software for Windows - Download Free Tools and Utilities"
+                    }),
+                    createVNode("meta", {
+                      name: "description",
+                      content: "Discover the best free software for Windows. Download utilities, antivirus programs, media players, and more without registration. Your source for reliable and secure free tools."
+                    }),
+                    createVNode("meta", {
+                      name: "keywords",
+                      content: "free software for Windows, free Windows tools, free antivirus download, best free media player, free utilities for Windows"
+                    })
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
             _push2(`<main class="flex flex-col gap-6"${_scopeId}><div class="w-full max-w-full overflow-hidden"${_scopeId}>`);
             _push2(ssrRenderComponent(_sfc_main$1, {
               sliders: __props.sliders,
@@ -139,6 +162,23 @@ const _sfc_main = {
             _push2(`<!--]--></main>`);
           } else {
             return [
+              createVNode(unref(Head), null, {
+                default: withCtx(() => [
+                  createVNode("meta", {
+                    name: "title",
+                    content: "Free Software for Windows - Download Free Tools and Utilities"
+                  }),
+                  createVNode("meta", {
+                    name: "description",
+                    content: "Discover the best free software for Windows. Download utilities, antivirus programs, media players, and more without registration. Your source for reliable and secure free tools."
+                  }),
+                  createVNode("meta", {
+                    name: "keywords",
+                    content: "free software for Windows, free Windows tools, free antivirus download, best free media player, free utilities for Windows"
+                  })
+                ]),
+                _: 1
+              }),
               createVNode("main", { class: "flex flex-col gap-6" }, [
                 createVNode("div", { class: "w-full max-w-full overflow-hidden" }, [
                   createVNode(_sfc_main$1, {

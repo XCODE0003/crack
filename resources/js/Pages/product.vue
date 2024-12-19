@@ -38,7 +38,7 @@ const seoTags = computed(() => parseSeoTags(props.product.seo_code));
             <div class="flex gap-6">
                 <div class="flex flex-col flex-1 gap-6">
                     <img
-                        :src="'/storage/' + product.image"
+                        :src="'/storage/' + product.big_image"
                         :alt="product.alt_image"
                         class="w-full h-full max-h-[400px] rounded-xl object-cover"
                     />

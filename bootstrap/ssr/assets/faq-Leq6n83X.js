@@ -1,8 +1,8 @@
 import { ref, unref, withCtx, createVNode, openBlock, createBlock, Fragment, renderList, toDisplayString, Transition, createCommentVNode, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderList, ssrInterpolate, ssrRenderClass } from "vue/server-renderer";
-import { a as _export_sfc, _ as _sfc_main$1 } from "./MainLayout-CEhTnx9A.js";
+import { a as _export_sfc, _ as _sfc_main$1 } from "./MainLayout-rxxRvUJY.js";
 import { Head } from "@inertiajs/vue3";
-import "./ProductCardGame-QWbuLZK0.js";
+import "./ProductCardGame-_lk9caIX.js";
 import "vue-final-modal";
 import "pinia";
 const _sfc_main = {

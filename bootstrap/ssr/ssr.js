@@ -350,7 +350,7 @@ createServer(
   (page) => createInertiaApp({
     page,
     render: renderToString,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/contacts.vue": () => import("./assets/contacts-B8SahiLM.js"), "./Pages/faq.vue": () => import("./assets/faq-DiRvkO_H.js"), "./Pages/information.vue": () => import("./assets/information-C3dch0cv.js"), "./Pages/main.vue": () => import("./assets/main-CfNTWL7k.js"), "./Pages/privacy.vue": () => import("./assets/privacy-DT8qIuNM.js"), "./Pages/product.vue": () => import("./assets/product-CpvV9170.js"), "./Pages/products.vue": () => import("./assets/products-CExzfxYH.js"), "./Pages/updates.vue": () => import("./assets/updates-CFTG1IxS.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/contacts.vue": () => import("./assets/contacts-CqVQjm1Y.js"), "./Pages/faq.vue": () => import("./assets/faq-Leq6n83X.js"), "./Pages/information.vue": () => import("./assets/information-eWfr6YK-.js"), "./Pages/main.vue": () => import("./assets/main-paZyJDCA.js"), "./Pages/privacy.vue": () => import("./assets/privacy-DbDrBd2l.js"), "./Pages/product.vue": () => import("./assets/product-B1raC876.js"), "./Pages/products.vue": () => import("./assets/products-Dm9dJJzA.js"), "./Pages/updates.vue": () => import("./assets/updates-BnGPSxEk.js") })),
     setup({ App, props, plugin }) {
       return createSSRApp({
         render: () => h$1(App, props)

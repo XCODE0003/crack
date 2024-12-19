@@ -115,7 +115,7 @@ const _sfc_main$1 = {
       _push(`</div></div><div class="flex aside-nav flex-col gap-4">`);
       _push(ssrRenderComponent(unref(Link), {
         href: "/information",
-        class: "flex items-center gap-2.5"
+        class: "link_nav flex items-center gap-2.5"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -143,10 +143,9 @@ const _sfc_main$1 = {
         }),
         _: 1
       }, _parent));
-      _push(`<a href="https://google.com" class="flex items-center gap-2.5"> Google <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 1.5L5.25 6L0.75 10.5" stroke="#8A8F99" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>`);
       _push(ssrRenderComponent(unref(Link), {
         href: "/privacy",
-        class: "flex items-center gap-2.5"
+        class: "link_nav flex items-center gap-2.5"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -176,7 +175,7 @@ const _sfc_main$1 = {
       }, _parent));
       _push(ssrRenderComponent(unref(Link), {
         href: "/faq",
-        class: "flex items-center gap-2.5"
+        class: "link_nav flex items-center gap-2.5"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -206,7 +205,7 @@ const _sfc_main$1 = {
       }, _parent));
       _push(ssrRenderComponent(unref(Link), {
         href: "/contacts",
-        class: "flex items-center gap-2.5"
+        class: "link_nav flex items-center gap-2.5"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {

@@ -1,8 +1,8 @@
 import { ref, onMounted, computed, unref, withCtx, openBlock, createBlock, toDisplayString, createCommentVNode, mergeProps, Fragment, renderList, createVNode, createTextVNode, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderList, ssrRenderAttrs, ssrIncludeBooleanAttr } from "vue/server-renderer";
-import { _ as _sfc_main$1 } from "./MainLayout-CEhTnx9A.js";
+import { _ as _sfc_main$1 } from "./MainLayout-rxxRvUJY.js";
 import { useForm, Head } from "@inertiajs/vue3";
-import { _ as _sfc_main$2, a as _sfc_main$3 } from "./ProductCardGame-QWbuLZK0.js";
+import { _ as _sfc_main$2, a as _sfc_main$3 } from "./ProductCardGame-_lk9caIX.js";
 import { p as parseSeoTags } from "./index-BVfPHjrP.js";
 import "vue-final-modal";
 import "pinia";

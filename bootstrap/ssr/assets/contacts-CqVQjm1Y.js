@@ -1,8 +1,8 @@
 import { withCtx, createVNode, createTextVNode, useSSRContext } from "vue";
 import { ssrRenderComponent } from "vue/server-renderer";
-import { _ as _sfc_main$1 } from "./MainLayout-CEhTnx9A.js";
+import { _ as _sfc_main$1 } from "./MainLayout-rxxRvUJY.js";
 import "@inertiajs/vue3";
-import "./ProductCardGame-QWbuLZK0.js";
+import "./ProductCardGame-_lk9caIX.js";
 import "vue-final-modal";
 import "pinia";
 const _sfc_main = {
