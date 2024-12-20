@@ -5,6 +5,7 @@ import ProductCard from "../Components/ProductCard.vue";
 import ProductCardGame from "../Components/ProductCardGame.vue";
 import Slider from "../Components/Slider.vue";
 import { Head } from "@inertiajs/vue3";
+import { formatUrl } from "../utils";
 const props = defineProps({
     categories: Array,
     sliders: Array,
@@ -36,7 +37,7 @@ const props = defineProps({
                     <h1 class="text-2xl font-bold">{{ category.name }}</h1>
                     <Link
                         class="text-blue font-medium hover:text-blue/50 transition-all duration-300"
-                        :href="`/category/${category.id}`"
+                        :href="'/' + formatUrl(category?.name.toLowerCase())"
                     >
                         See all
                     </Link>

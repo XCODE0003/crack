@@ -31,4 +31,24 @@ const parseSeoTags = (seoCode, title) => {
     };
 };
 
+
+export const formatUrl = (url) => {
+    // Convert URL to lowercase
+    url = url.toLowerCase();
+
+    // Replace spaces with hyphens
+    url = url.replace(/\s+/g, '-');
+
+    // Remove special characters
+    url = url.replace(/[^a-z0-9\-]/g, '');
+
+    // Remove multiple hyphens
+    url = url.replace(/-+/g, '-');
+
+    // Remove leading and trailing hyphens
+    url = url.replace(/^-+|-+$/g, '');
+
+    return url;
+};
+
 export { parseSeoTags };

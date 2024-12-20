@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/vue3";
 import { ref, computed, onMounted } from "vue";
 import { Head } from "@inertiajs/vue3";
 import { useDownloadModalStore } from "../Store/DownloadModalStore";
-import { parseSeoTags } from "../utils";
+import { parseSeoTags, formatUrl } from "../utils";
 const downloadModalStore = useDownloadModalStore();
 const props = defineProps({
     product: Object,
@@ -32,7 +32,12 @@ const seoTags = computed(() => parseSeoTags(props.product.seo_code));
             <div class="flex flex-col gap-5">
                 <div class="flex flex-col gap-2">
                     <h1 class="text-4xl font-semibold">{{ product.title }}</h1>
-                    <span class="text-blue"> {{ category.name }} </span>
+                    <Link
+                        :href="'/' + formatUrl(category?.name.toLowerCase())"
+                        class="text-blue"
+                    >
+                        {{ category.name }}
+                    </Link>
                 </div>
             </div>
             <div class="flex gap-6">
@@ -88,7 +93,12 @@ const seoTags = computed(() => parseSeoTags(props.product.seo_code));
                         <div class="flex flex-col gap-3">
                             <Link
                                 v-for="product in props.products"
-                                :href="'/product/' + product.id"
+                                :href="
+                                    '/' +
+                                    formatUrl(category?.name.toLowerCase()) +
+                                    '/' +
+                                    formatUrl(product?.title.toLowerCase())
+                                "
                                 class="flex items-center gap-3 pb-3 border-b border-gray_border"
                             >
                                 <img

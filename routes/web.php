@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Service\FormatUrl;
 use App\Models\Updates;
 /*
 |--------------------------------------------------------------------------
@@ -32,32 +33,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/category/{name}', function ($name, Request $request) {
-    $category = Category::where('name', $name)->first();
-    $currentPage = $request->get('page', 1);
-    $perPage = 8;
 
-    $allProducts = collect();
-    for ($i = 1; $i <= $currentPage; $i++) {
-        $products = $category->products()
-            ->paginate($perPage, ['*'], 'page', $i);
-        $allProducts = $allProducts->concat($products->items());
-    }
-
-    $products = new \Illuminate\Pagination\LengthAwarePaginator(
-        $allProducts,
-        $products->total(),
-        $perPage,
-        $currentPage,
-        ['path' => $request->url()]
-    );
-
-    return Inertia::render('products', [
-        'category' => $category,
-        'products' => $products,
-        'title' => $category->full_name
-    ]);
-});
 
 Route::get('/updates', function () {
     $updates = Updates::all();
@@ -88,7 +64,38 @@ Route::get('/faq', function () {
         'title' => 'How to Install Software - FAQ for Safe Download'
     ]);
 });
-Route::get('/product/{category}/{name}', function ($category, $name) {
+Route::get('/{name}', function ($name, Request $request) {
+    $formatUrl = new FormatUrl();
+    $name = $formatUrl->format($name);
+    $category = Category::where('name', $name)->first();
+    $currentPage = $request->get('page', 1);
+    $perPage = 8;
+
+    $allProducts = collect();
+    for ($i = 1; $i <= $currentPage; $i++) {
+        $products = $category->products()
+            ->paginate($perPage, ['*'], 'page', $i);
+        $allProducts = $allProducts->concat($products->items());
+    }
+
+    $products = new \Illuminate\Pagination\LengthAwarePaginator(
+        $allProducts,
+        $products->total(),
+        $perPage,
+        $currentPage,
+        ['path' => $request->url()]
+    );
+
+    return Inertia::render('products', [
+        'category' => $category,
+        'products' => $products,
+        'title' => $category->full_name
+    ]);
+});
+Route::get('/{category}/{name}', function ($category, $name) {
+    $formatUrl = new FormatUrl();
+    $category = $formatUrl->format($category);
+    $name = $formatUrl->unformat($name);
     $category = Category::where('name', $category)->first();
     $product = Product::where('title', $name)->first();
     $products = Product::query()->limit(5)->inRandomOrder()->get();

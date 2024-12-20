@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import { defineProps } from "vue";
+import { formatUrl } from "../utils";
 const props = defineProps({
     product: Object,
     category: Object,
@@ -12,12 +13,11 @@ console.log(props.product);
 <template>
     <Link
         :href="
-            '/product/' +
-            category?.name.toLowerCase() +
+            formatUrl(category?.name.toLowerCase()) +
             '/' +
-            product?.title.toLowerCase()
+            formatUrl(product?.title.toLowerCase())
         "
-        class="flex flex-col gap-5 rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark p-6"
+        class="flex flex-col gap-5 h-full rounded-2xl hover:bg-dark/50 cursor-pointer transition-all duration-300 bg-dark p-6"
     >
         <div class="flex justify-center items-center">
             <img
@@ -26,7 +26,9 @@ console.log(props.product);
             />
         </div>
         <div class="flex items-center flex-col gap-1">
-            <p class="leading-none font-medium">{{ product.title }}</p>
+            <p class="leading-none text-white text-center font-medium">
+                {{ product.title }}
+            </p>
             <div class="flex items-center specification gap-2">
                 <span
                     v-for="slug in product.slug"

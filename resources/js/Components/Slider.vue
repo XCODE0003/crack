@@ -4,7 +4,7 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
-
+import { Link } from "@inertiajs/vue3";
 import "swiper/css/pagination";
 const modules = [Pagination, Autoplay];
 
@@ -26,11 +26,12 @@ const props = defineProps({
             class="h-[400px] max-w-[1000px]"
         >
             <swiper-slide v-for="slider in sliders" :key="slider.id">
-                <img
-                    class="object-cover"
-                    :src="`/storage/${slider.image}`"
-                    :alt="slider.alt_image"
-                />
+                <Link :href="slider.url ?? '#'">
+                    <img
+                        class="object-cover rounded-xl"
+                        :src="`/storage/${slider.image}`"
+                        :alt="slider.alt_image"
+                /></Link>
             </swiper-slide>
         </swiper>
     </div>

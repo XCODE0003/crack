@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->text('seo_code')->nullable();
+            $table->longText('seo_code')->nullable();
             $table->string('image');
             $table->string('big_image');
             $table->string('alt_image')->nullable();

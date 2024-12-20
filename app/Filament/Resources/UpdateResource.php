@@ -23,7 +23,7 @@ class UpdateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
+                Forms\Components\RichEditor::make('title')
                     ->required(),
                 Forms\Components\DatePicker::make('date_created')
                     ->required(),

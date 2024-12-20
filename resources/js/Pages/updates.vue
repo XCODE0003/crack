@@ -23,7 +23,7 @@ const props = defineProps({
                     v-for="update in updates"
                     class="p-6 rounded-xl font-medium bg-dark flex justify-between items-center"
                 >
-                    <span> {{ update.title }} </span>
+                    <span v-html="update.title"></span>
                     <span class="text-sm text-gray">
                         {{ update.date_created }}
                     </span>

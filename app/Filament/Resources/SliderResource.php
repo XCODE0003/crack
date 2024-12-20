@@ -37,6 +37,7 @@ class SliderResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('alt_image'),
+                Tables\Columns\TextColumn::make('url'),
             ])
             ->filters([
                 //

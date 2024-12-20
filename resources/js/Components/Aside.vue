@@ -1,7 +1,7 @@
 <script setup>
 import Logo from "./Icons/Logo.vue";
 import { Link } from "@inertiajs/vue3";
-
+import { formatUrl } from "../utils";
 const props = defineProps({
     categories: Array,
 });
@@ -16,7 +16,7 @@ const props = defineProps({
             <div class="flex flex-col aside-nav gap-4">
                 <Link
                     v-for="category in props.categories"
-                    :href="`/category/${category.name.toLowerCase()}`"
+                    :href="'/' + formatUrl(category?.name.toLowerCase())"
                     class="flex link_nav items-center gap-3 hover:text-white stroke-gray hover:fill-white hover:stroke-white"
                 >
                     <div

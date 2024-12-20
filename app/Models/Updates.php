@@ -12,6 +12,7 @@ class Updates extends Model
     protected $fillable = [
         'title',
         'date_created',
+
     ];
 
     protected $casts = [
